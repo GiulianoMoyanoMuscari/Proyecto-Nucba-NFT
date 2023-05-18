@@ -1,0 +1,176 @@
+:root{
+  /*bg colors*/
+  --background: #02050e;
+  --primary: #1e50ff;
+  --secondary: #272d37;
+  --btn-bg: #050d26;
+  --bg-azul-10: #e9eeff;
+  --bg-white: #fff;
+  --bg-electric: #f0fbff;
+  --nav-bag: #0f1525;
+
+  /*Text colors*/
+  --text-gray: #adb9c7;
+  --text-white: #f3f4f6;
+
+  /*Decoration*/
+  --fire: #ff6d00;
+  --electric: #64d3ff;
+}
+
+@media (max-width : 992px){
+  /* ------------------------------ HEADER Y BARRA DE NAVEGACION ------------------------------ */
+  .navbar{
+    gap: 15px;
+  }
+
+  .navbar-list{
+    display: none; /* oculatamos la lista*/
+
+    /* estilamos la lista desplegable */
+    flex-direction: column;
+    background-color: var(--nav-bag);
+    border: 2px solid var(--electric);
+    border-top: none;
+    border-radius: 0px 0px 15px 15px;
+    position: absolute;
+    top: 65px;
+    left: 18%;
+    width: 64%;
+    padding: 30px;
+    z-index: 2;
+  }
+
+  .navbar-list a{
+    font-size: 18px;
+  }
+
+  .menu-label{
+    display: flex;/*para que aparezca el icono del menu*/
+    order: 2; /*para que el menu hamburger se ponga a la derecha*/
+    cursor: pointer;
+  }
+
+  .icono-carrito{
+    height: 33px;
+    margin-top: 4px;
+  }
+
+  #menu-toggle:checked + .navbar-list{ /*para que la lista se muestre cuando se clickea el icono del menu*/
+    display: flex; 
+  }
+
+/*  ------------------------------------------- MAIN ------------------------------------------- */
+
+/*  -------------------- Section Hero --------------------  */
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .hero-info h1 {
+  width: 90%;
+  max-width: 500px;
+  min-width: unset;
+  }
+
+  .hero-info p {
+    width: 60%;
+    max-width: 600px;
+  }
+
+  .hero-card {
+    display: none;
+  }
+
+/* -------------------- Section Info -------------------- */
+  #info h2 {
+    text-align: center;
+    width: 80%;
+  }
+
+  .info-cards-container {
+    max-width: 80%;
+  }
+
+/* -------------------- Section Discover -------------------- */
+  #discover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .discover-info{
+    flex-direction: column;
+    align-items: center;
+  }
+
+/* -------------------- Section Products -------------------- */
+  .categories{
+    flex-wrap: wrap;
+    max-width: 400px;
+  }
+
+  .category {
+    width: 120px;
+  }
+
+  .products-container {
+    width: 90%;
+  }
+
+/*  ------------------------------------------- FOOTER ------------------------------------------- */
+  .container-footer-links{
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+
+/* -------------------- Section Hero -------------------- */
+  .hero-info p {
+    width: 70%;
+    max-width: unset;
+  }
+
+/* -------------------- Section Discover -------------------- */
+#discover h2 {
+  width: 100%;
+}
+
+  .discover-cards{
+    flex-direction: column;
+  }
+
+  .discover-cards img{
+    width: 60%;
+  }
+
+  .discover-text {
+    width: 90%;
+    padding: 10px;
+    line-height: 30px;
+    gap: 50px;
+  }
+
+  .discover-text a {
+    font-size: 20px;
+  }
+
+/* -------------------- Section Products -------------------- */
+.products-container {
+  width: 80%;
+}
+
+.product {
+  width: 100%;
+}
+
+
+}

@@ -108,8 +108,10 @@ header{
   gap: 30px;
   height: calc(100vh - 65px);
   overflow-y: scroll;
-  display: none;
+  /* display: none; */
   z-index: 2;
+  transform: translate(200%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
 
@@ -119,7 +121,8 @@ header{
 
 /* Toggle del carro - funcion ocultar/mostrar */
 #car-toggle:checked + .carrito {
-  display: flex;
+  transform: translate(0%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
 
@@ -223,8 +226,8 @@ header{
   font-size: 16px;
 }
 
-/* ------------------------------------------- FIN ------------------------------------------ */
 /* ------------------------------ HEADER Y BARRA DE NAVEGACION ------------------------------ */
+/* ------------------------------------------- FIN ------------------------------------------ */
 
 
 

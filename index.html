@@ -7,7 +7,10 @@
         <title>NFT Landing</title>
         <!-- CSS -->
         <link rel="stylesheet" href="assets/style.css">
+        <!-- Creamos mediaqueris -->
         <link rel="stylesheet" href="assets/mediaqueries.css">
+        <!-- Agregamos las animaciones -->
+        <link rel="stylesheet" href="assets/animaciones.css">
     </head>
 
     <body>
@@ -30,11 +33,11 @@
 
                 <!-- Lista de navegacion -->
                 <ul class="navbar-list">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Descubre</a></li>
-                    <li><a href="#">BTC</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley">Youtube</a></li>
-                    <li><a href="#">Contáctanos</a></li>
+                    <li><a href="#section-hero">Home</a></li>
+                    <li><a href="#discover">Descubre</a></li>
+                    <li><a href="#products">BTC</a></li>
+                    <li><a href="https://www.youtube.com/@NUCBAok" target="_blank">Youtube</a></li>
+                    <li><a href="https://www.nucba.com.ar" target="_blank">Contáctanos</a></li>
                 </ul>
 
                 <!-- Agregamos el label con la imagen del carrito y el input -->
@@ -70,6 +73,9 @@
                     </div>
                     <button class="btn-add">Comprar</button>
                 </div>
+
+                <!-- AGREGAMOS UN DIV VACIO CON CLASE OVERLAY PARA HACER EL EFECTO GLASS AL ABRIR NUESTRO MENU HAMBURGESA Y CARRITO -->
+                <div class="overlay"></div>
             </nav>
         </header>
 
@@ -79,7 +85,7 @@
             <section id="section-hero">
                 <!-- Hero Info -->
                 <div class="hero-info">
-                    <h1>Descubre la nueva era Crypto</h1>
+                    <h1>Descubre la nueva era <span>Crypto</span></h1>
                     <p>NUCBA NFT es el primer Marketplace educativo tecnológico de NFT, que son elementos digitales épicos que realmente puedes poseer. Los elementos digitales existen desde hace mucho tiempo, pero <span>Nucba </span> como este. </p>
                     <a href="#">Be Nucber</a>
                 </div>

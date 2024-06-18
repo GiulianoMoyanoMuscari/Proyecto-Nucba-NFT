@@ -6,11 +6,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>NFT Landing</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         <!-- Creamos mediaqueris -->
-        <link rel="stylesheet" href="assets/mediaqueries.css">
+        <link rel="stylesheet" href="assets/css/mediaqueries.css">
         <!-- Agregamos las animaciones -->
-        <link rel="stylesheet" href="assets/animaciones.css">
+        <link rel="stylesheet" href="assets/css/animaciones.css">
+        <!-- AGREGAMOS CDN DE FONT-AWESOME -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
     </head>
 
     <body>
@@ -20,16 +28,11 @@
             
             <nav class="navbar">
 
-                <!-- Agregamos el label con la imagen del menu hamburguesa -->
+                <!-- Agregamos el boton de menu -->
                 <!-- Esto lo usamos para Responsive Design -->
-                <label for="menu-toggle" class="menu-label">
+                <div for="menu-toggle" class="menu-label">
                     <img src="assets/img/menu.png" class="menu-icon">
-                </label>
-
-                <!-- Agregamos el checkbox y lo linkeamos con el label  -->
-                <!-- Este input es para poder ocultar y mostrar el menu
-                cuando clickeamos en la imagen y así hacerlo desplegable-->
-                <input type="checkbox"  id="menu-toggle">
+                </div>
 
                 <!-- Lista de navegacion -->
                 <ul class="navbar-list">
@@ -37,18 +40,18 @@
                     <li><a href="#discover">Descubre</a></li>
                     <li><a href="#products">BTC</a></li>
                     <li><a href="https://www.youtube.com/@NUCBAok" target="_blank">Youtube</a></li>
-                    <li><a href="https://www.nucba.com.ar" target="_blank">Contáctanos</a></li>
+                    <li><a href="https://www.nucba.com.ar" target="_blank">Conocenos</a></li>
                 </ul>
 
-                <!-- Agregamos el label con la imagen del carrito y el input -->
-                <!-- Esto lo usamos para Responsive Design -->
-                <label for="car-toggle" class="car-label">
-                    <img src="assets/img/cart-icon.svg" alt="Carro de Compras" class="icono-carrito">
-                </label>
-                <input type="checkbox"  id="car-toggle">
+                <!-- Agregamos el icono del carrito -->
+                <div class="cart-label">
+                    <i class="fa-solid fa-cart-shopping cart-icon">
+                        <div class="cart-bubble">0</div>
+                    </i>
+                </div>
                 
                 <!-- Agregamos la lista de cards compradas al carro, ejemplo -->
-                <div class="carrito">
+                <div class="carrito hidden">
                     <h2>Tus NFTs</h2>
                     <!-- producto en carrito -->
                     <div class="cart-item">
@@ -166,18 +169,18 @@
                 <!-- Categories -->
                 <div class="categories">
                     <button class="category active">🎨Todas</button>
-                    <button class="category">⚽Futbol</button>
-                    <button class="category">🎷Música</button>
-                    <button class="category">🎬Películas</button>
-                    <button class="category">🚗Autos</button>
-                    <button class="category">💼Políticos</button>
+                    <button class="category" data-category="futbol">⚽Futbol</button>
+                    <button class="category" data-category="musica">🎷Música</button>
+                    <button class="category" data-category="peliculas">🎬Películas</button>
+                    <button class="category" data-category="autos">🚗Autos</button>
+                    <button class="category" data-category="politicos">💼Políticos</button>
                 </div>
 
                 <!-- Productos -->
                 <div class="products-container">
 
                     <!-- Producto 1 -->
-                    <div class="product">
+                    <!-- <div class="product">
                         
                         <img src="assets/img/products/goldenmessi.png" alt="Lionel Messi Golden">
                         <div class="product-info-container">
@@ -203,162 +206,7 @@
                                 <button class="btn-add">Add</button>
                             </div>
                         </div>
-                    </div>   
-
-
-                    <!-- Producto 2 -->
-                    <div class="product">
-                        
-                        <img src="assets/img/products/diego.png" alt="Diego Armando Maradona">
-
-                        <div class="product-info-container">
-
-                            <div class="product-info-top">
-                                <h3>Diego Maradona</h3>
-                                <p>Current Bid</p>
-                            </div>
-
-                            <div class="product-info-mid">
-                                <div class="user-info">
-                                    <img src="assets/img/user.png" alt="Usuario">
-                                    <p>@thetroncous</p>
-                                </div>
-                                <span>6.89 eTH</span>
-                            </div>
-
-                            <div class="product-info-bot">
-                                <div class="offer-time">
-                                    <img src="assets/img/fire.png" alt="Fuego">
-                                    <p>05:12:07</p>
-                                </div>
-                                <button class="btn-add">Add</button>
-                            </div>
-                        </div>
-                    </div>  
-                    
-                    
-                    <!-- Producto 3 -->
-                    <div class="product">
-                        
-                        <img src="assets/img/products/beardedmessi.png" alt="Lionel Messi">
-
-                        <div class="product-info-container">
-
-                            <div class="product-info-top">
-                                <h3>Lionel Messi</h3>
-                                <p>Current Bid</p>
-                            </div>
-
-                            <div class="product-info-mid">
-                                <div class="user-info">
-                                    <img src="assets/img/user.png" alt="Usuario">
-                                    <p>@thetroncous</p>
-                                </div>
-                                <span>6.89 eTH</span>
-                            </div>
-
-                            <div class="product-info-bot">
-                                <div class="offer-time">
-                                    <img src="assets/img/fire.png" alt="Fuego">
-                                    <p>05:12:07</p>
-                                </div>
-                                <button class="btn-add">Add</button>
-                            </div>
-                        </div>
-                    </div>  
-
-                    
-                    <!-- Producto 4 -->
-                    <div class="product">
-                        
-                        <img src="assets/img/products/alonso.png" alt="Fernando Alonso">
-
-                        <div class="product-info-container">
-
-                            <div class="product-info-top">
-                                <h3>Fernando Alonso</h3>
-                                <p>Current Bid</p>
-                            </div>
-
-                            <div class="product-info-mid">
-                                <div class="user-info">
-                                    <img src="assets/img/user.png" alt="Usuario">
-                                    <p>@thetroncous</p>
-                                </div>
-                                <span>6.89 eTH</span>
-                            </div>
-
-                            <div class="product-info-bot">
-                                <div class="offer-time">
-                                    <img src="assets/img/fire.png" alt="Fuego">
-                                    <p>05:12:07</p>
-                                </div>
-                                <button class="btn-add">Add</button>
-                            </div>
-                        </div>
-                    </div>  
-
-
-                    <!-- Producto 5 -->
-                    <div class="product">
-                        
-                        <img src="assets/img/products/schumacher.png" alt="Michael Shumacher">
-
-                        <div class="product-info-container">
-
-                            <div class="product-info-top">
-                                <h3>Michael Shumacher</h3>
-                                <p>Current Bid</p>
-                            </div>
-
-                            <div class="product-info-mid">
-                                <div class="user-info">
-                                    <img src="assets/img/user.png" alt="Usuario">
-                                    <p>@thetroncous</p>
-                                </div>
-                                <span>6.89 eTH</span>
-                            </div>
-
-                            <div class="product-info-bot">
-                                <div class="offer-time">
-                                    <img src="assets/img/fire.png" alt="Fuego">
-                                    <p>05:12:07</p>
-                                </div>
-                                <button class="btn-add">Add</button>
-                            </div>
-                        </div>
-                    </div>  
-
-
-                    <!-- Producto 6 -->
-                    <div class="product">
-                        
-                        <img src="assets/img/products/toretto.png" alt="Toretto">
-
-                        <div class="product-info-container">
-
-                            <div class="product-info-top">
-                                <h3>Toretto</h3>
-                                <p>Current Bid</p>
-                            </div>
-
-                            <div class="product-info-mid">
-                                <div class="user-info">
-                                    <img src="assets/img/user.png" alt="Usuario">
-                                    <p>@thetroncous</p>
-                                </div>
-                                <span>6.89 eTH</span>
-                            </div>
-
-                            <div class="product-info-bot">
-                                <div class="offer-time">
-                                    <img src="assets/img/fire.png" alt="Fuego">
-                                    <p>05:12:07</p>
-                                </div>
-                                <button class="btn-add">Add</button>
-                            </div>
-                        </div>
-                    </div>  
+                    </div>  -->  
 
                 </div>
                 <button class="btn-load">Ver Más</button>
@@ -376,5 +224,9 @@
             </div>
             <p>Hecho con ❤️ en <span>NUCBACRYPTO</span></p>
         </footer>
+
+        <div class="add-modal"></div>
+        <script src="assets/js/data.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 </html>

@@ -3,12 +3,21 @@ const productsContainer = document.querySelector('.products-container');
 // Boton ver mas
 const showMoreBtn = document.querySelector('.btn-load');
 
-//Contenedor de Categorias
+// Contenedor de Categorias
 const categotiesConteiner = document.querySelector('.categories');
-//Botones de Categoria
+// Botones de Categoria
 const categotiesList = document.querySelectorAll('.category');
 
-
+// Boton carrito
+const cartBtn = document.querySelector('.cart-label')
+// Boton menu
+const menuBtn = document.querySelector('.menu-label')
+// div carrito
+const cartMenu = document.querySelector('.cart')
+// div menu(hamburguesa)
+const barsMenu = document.querySelector('.navbar-list')
+// overlay
+const overlay =document.querySelector('.overlay')
 
 /* ----------- Logica para renderizar productos ----------- */
 // Funcion para crear el html del producto
@@ -93,7 +102,6 @@ const isInactiveFilterBtn = (element) => {
   return element.classList.contains('category') && !element.classList.contains('active')
 }
 
-
 // Funcion sacar la clase 'active' a uno y ponerselo a otro
 const changeBtnActiveState = (selectedCategory) => {
   // traemos todos los botones y los guardamos en el array
@@ -109,7 +117,6 @@ const changeBtnActiveState = (selectedCategory) => {
   })
 }
 
-
 // Funcion para cambiar el estado del filtro activo
 const changeFilterState = (btn) => {
   appState.activeFilter = btn.dataset.category;
@@ -118,13 +125,11 @@ const changeFilterState = (btn) => {
   setShowMoreVisibility();
 }
 
-
 // Funcion para filtrar los productos seleccionados
 const renderFilteredProducts = () => {
   const filteredProducts = productsData.filter((product) => product.category === appState.activeFilter);
   renderProducts(filteredProducts)
 }
-
 
 // Funcion para aplicar filtros
 const applyFilter = ( { target } ) => {
@@ -140,15 +145,57 @@ const applyFilter = ( { target } ) => {
     return;
   }
   renderProducts(appState.products[0]);
+  showMoreBtn.classList.remove('hidden')
 }
-/* --------------------- fin ------------------------------ */
+/* --------------------- FIN ------------------------------ */
+
+
+
+/* ----------- Logica Menu/Carrito modal ----------- */
+/*Funcion para abrir el carrito */
+const toggleCart = () => {
+  cartMenu.classList.toggle("open-cart");
+
+  if (barsMenu.classList.contains("open-menu")) {
+    barsMenu.classList.remove("open-menu");
+    return;
+  }
+
+  overlay.classList.toggle("show-overlay");
+}
+
+/*Funcion para abrir el menu */
+const toggleMenu = () => {
+  barsMenu.classList.toggle("open-menu");
+
+  if (cartMenu.classList.contains("open-cart")) {
+    cartMenu.classList.remove("open-cart");
+    return;
+  }
+
+  overlay.classList.toggle("show-overlay");
+}
+
+/*Funcion para cerrar el menu/carrito cuando se clickea el overlay */
+const closeOnOverlayClick = () => {
+  cartMenu.classList.remove("open-cart");
+  barsMenu.classList.remove("open-menu");
+  overlay.classList.remove("show-overlay")
+}
+/* --------------------- FIN ------------------------------ */
+
 
 
 //Funcion Inicializadora
 const init = () => {
   renderProducts(appState.products[0]);
   showMoreBtn.addEventListener('click', showMoreProducts);
-  categotiesConteiner.addEventListener('click', applyFilter)
+  categotiesConteiner.addEventListener('click', applyFilter);
+
+  cartBtn.addEventListener('click', toggleCart);
+  menuBtn.addEventListener('click', toggleMenu);
+
+  overlay.addEventListener('click', closeOnOverlayClick)
 }
 
 init();

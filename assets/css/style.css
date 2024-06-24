@@ -19,6 +19,7 @@
   /*Decoration*/
   --fire: #ff6d00;
   --electric: #64d3ff;
+  --rose: #c43ad6;
 }
 
 *{
@@ -41,7 +42,7 @@ header{
   padding: 0 30px 0;
   position: sticky;
   top: 0;
-  z-index: 2; 
+  z-index: 999; 
 }
 
 .logo{
@@ -104,9 +105,7 @@ header{
 
 
 
-/* Ocultamos los checkbox y el icono del Menu Hamburguesa */
-#menu-toggle,
-#car-toggle,
+/* Ocultamos el Menu Hamburguesa */
 .menu-label{
   display: none;
 }
@@ -114,30 +113,35 @@ header{
 /* Aca modificamos el Carrito */
 
 /* -------- Carrito -------- */
-.carrito {
+.cart {
   position: absolute;
   top: 65px;
   right: 0;
   padding: 20px 30px 50px 30px;
   background: linear-gradient(to top, #121e3c, var(--background));
   border-left: 1px solid var(--nav-bg);
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   gap: 30px;
   height: calc(100vh - 65px);
   overflow-y: scroll;
-  /* display: none; */
   z-index: 2;
-  transform: translate(200%);
+  /*transform: translate(200%);*/
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
-}
-
-
-.carrito::-webkit-scrollbar { /* ocultar la barra de scroll del carrito*/
   display: none;
 }
 
-.carrito h2 {
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart::-webkit-scrollbar { /* ocultar la barra de scroll del carrito*/
+  display: none;
+}
+
+.cart h2 {
   color: var(--text-white);
   font-size: 20px;
   font-weight: 600;
@@ -209,8 +213,11 @@ header{
   color: var(--text-gray);
 }
 
-.down,
 .up {
+  border: 1px solid var(--electric);
+}
+
+.down {
   background-color: var(--secondary);
   border: 1px solid var(--electric);
 }
@@ -218,12 +225,14 @@ header{
 .divider {
   margin-top: 20px;
   border: 0.5px solid var(--electric);
+  width: 100%;
 }
 
 .cart-total {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  width: 100%;
 }
 
 .cart-total p {
@@ -235,6 +244,18 @@ header{
   color: var(--text-white);
   font-weight: 400;
   font-size: 16px;
+}
+
+/*Toggle del carro*/
+.open-cart {
+  /*transform: translate(0%);*/
+  display: flex;
+  /*transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);*/
+}
+
+.empty-msg {
+  color: var(--text-gray);
+  font-size: 14px;
 }
 
 /* ------------------------------ HEADER Y BARRA DE NAVEGACION ------------------------------ */
@@ -605,13 +626,35 @@ main{
   width: 20px;
 }
 
-.btn-add{
-  background-color: var(--primary);
-  border: none;
-  color: var(--text-white);
-  padding: 10px 35px;
-  border-radius: 10px;
+.btn-add,
+.btn-buy,
+.btn-delete {
   cursor: pointer;
+  padding: 10px 35px;
+  color: var(--bg-white);
+  border-radius: 10px;
+  border: none;
+  transition: 0.3s all ease-out;
+}
+
+.btn-buy,
+.btn-add {
+  background: var(--primary);
+}
+
+.btn-buy,
+.btn-delete {
+  width: 100%;
+}
+
+.btn-delete {
+  border: 2px solid var(--primary);
+  background-color: transparent;
+}
+
+.btn-delete:hover {
+  background: var(--primary);
+  transition: 0.3s all ease-in;
 }
 
 .btn-load {
@@ -645,6 +688,62 @@ footer a{
   gap: 40px;
 }
 
+/*  ------------------------------------------- otros ------------------------------------------- */
+
 .hidden {
   display: none;
+}
+
+.disabled {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+.disabled:hover {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+
+.add-modal {
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: translateY(200%);
+}
+
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

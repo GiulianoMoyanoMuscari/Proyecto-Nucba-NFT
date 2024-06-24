@@ -25,14 +25,10 @@ html{
   display: none;
 }
 
-/* Toggle para el display (para que funcione unicamente cuando abrimos el carrito o menu hamburguesa) */
-#car-toggle:checked ~ .overlay{
-  display: block ;
+.show-overlay{
+  display: block;
 }
 
-#menu-toggle:checked ~ .overlay{
-  display: block ;
-}
 
 /* NAVBAR-LIST */
 /* Hover de los elementos "a" de mi navbar-list */ 
@@ -61,12 +57,12 @@ html{
 
 /* CARRITO */
 /* Aplicar una animación en hover */
-.icono-carrito{
+.cart-icon{
   transition: all 0.2s ease-out;
 }
-.icono-carrito:hover{
-  color: var(--electric) ;
-  border-color: var(--electric) ;
+.cart-icon:hover{
+  color: var(--rose) ;
+  border-color: var(--rsoe) ;
   transition: all 0.2s ease-in ;
 }
 

@@ -51,30 +51,38 @@
                 </div>
                 
                 <!-- Agregamos la lista de cards compradas al carro, ejemplo -->
-                <div class="carrito hidden">
+                <div class="cart">
                     <h2>Tus NFTs</h2>
-                    <!-- producto en carrito -->
-                    <div class="cart-item">
-                        <img src="./assets/img/cart/cart-img.png" alt="Nft del carrito" />
-                        <div class="item-info">
-                            <h3 class="item-title">Fernando Alonso</h3>
-                            <p class="item-bid">Current bid</p>
-                            <span class="item-price">4.8 ETH</span>
-                        </div>
-                        <div class="item-handler">
-                            <span class="quantity-handler down">-</span>
-                            <span class="item-quantity">1</span>
-                            <span class="quantity-handler up">+</span>
-                        </div>
+
+                    <div class="cart-container">
+                        <!-- producto en carrito -->
+                        <!-- <div class="cart-item">
+                            <img src="./assets/img/cart/cart-img.png" alt="Nft del carrito" />
+                            <div class="item-info">
+                                <h3 class="item-title">Fernando Alonso</h3>
+                                <p class="item-bid">Current bid</p>
+                                <span class="item-price">4.8 ETH</span>
+                            </div>
+                            <div class="item-handler">
+                                <span class="quantity-handler down">-</span>
+                                <span class="item-quantity">1</span>
+                                <span class="quantity-handler up">+</span>
+                            </div>
+                        </div> -->
                     </div>
+
                     <!-- divisor productos-total -->
                     <span class="divider"></span>
+
                     <!-- total de compra -->
                     <div class="cart-total">
                         <p>Total:</p>
                         <span>4.8 ETH</span>
                     </div>
-                    <button class="btn-add">Comprar</button>
+
+                    <!-- botones -->
+                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-delete">Vaciar carrito</button>
                 </div>
 
                 <!-- AGREGAMOS UN DIV VACIO CON CLASE OVERLAY PARA HACER EL EFECTO GLASS AL ABRIR NUESTRO MENU HAMBURGESA Y CARRITO -->

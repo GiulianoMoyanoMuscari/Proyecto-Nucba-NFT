@@ -78,7 +78,7 @@ const productsData = [
     user: "ThingyBit",
     category: "politicos",
     userImg: "./assets/img/user.png",
-    cardImg: "./assets/img/products/putin.png",
+    cardImg: "./assets/img/products/Putin.png",
   },
   {
     id: 10,
@@ -132,7 +132,7 @@ const productsData = [
     user: "CamiCrow",
     category: "peliculas",
     userImg: "./assets/img/user.png",
-    cardImg: "./assets/img/products/jolie.png",
+    cardImg: "./assets/img/products/Jolie.png",
   },
 ];
 
